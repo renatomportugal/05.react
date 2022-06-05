@@ -23,4 +23,9 @@ npx react-codemod update-react-imports
 
 |Links        |Telas        |
 |---          |---          |
-| [006.modelo](https://renatomportugal.github.io/template/006.modelo/) |<img src="images/006.modelo.jpg"/> |
+| [001.React_Flexbox](https://renatomportugal.github.io/05.react/001.React_Flexbox/) |<img src="images/001.React_Flexbox.jpg"/> |
+| [002.flight-instruments](https://renatomportugal.github.io/05.react/002.flight-instruments/) |<img src="images/002.flight-instruments.jpg"/> |
+| [003.scroll-snap-spacer](https://renatomportugal.github.io/05.react/003.scroll-snap-spacer/) |<img src="images/003.scroll-snap-spacer.jpg"/> |
+| [004.daftPunk](https://renatomportugal.github.io/05.react/004.daftPunk/) |<img src="images/004.daftPunk.jpg"/> |
+| [005.modelo](https://renatomportugal.github.io/05.react/005.modelo/) |<img src="images/005.modelo.jpg"/> |
+| [005.modelo](https://renatomportugal.github.io/05.react/005.modelo/) |<img src="images/005.modelo.jpg"/> |
