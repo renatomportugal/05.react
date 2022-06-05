@@ -3,9 +3,12 @@
 ## Erros
 
 ```CMD
-'parcel' is not recognized as an internal or external command
+[Rodar]
 npm install
+npm start
 
+[Erros]
+'parcel' is not recognized as an internal or external command
 
 Failed to compile.
 ./src/App.js
