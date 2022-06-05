@@ -1,0 +1,184 @@
+:root {
+  --quentin: #f55;
+  --burst: 0.4;
+  --bubble: #59abe3;
+  --belly: #ffd5d5;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+body {
+  background: radial-gradient(circle at 50% 50%, #1e90ff 20%, #2c3e50 75%), #1e90ff;
+  cursor: pointer;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#app {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quentin {
+  width: 200px;
+}
+.quentin__belly {
+  fill: var(--belly);
+}
+.quentin__body {
+  fill: var(--quentin);
+}
+.quentin__burst,
+.quentin__eye,
+.quentin__squint,
+.quentin__open-mouth,
+.quentin__mouth {
+  opacity: 1;
+  fill: #000;
+  fill-opacity: 1;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+}
+.quentin__squint,
+.quentin__burst,
+.quentin__mouth {
+  fill: none;
+  stroke: #000;
+}
+.quentin__squint,
+.quentin__burst,
+.quentin__open-mouth {
+  display: none;
+}
+.quentin--cheer .quentin__squint {
+  display: block;
+}
+.quentin--cheer .quentin__eye {
+  display: none;
+}
+.quentin--bursting .quentin__squint,
+.quentin--bursting .quentin__eye,
+.quentin--bursting .quentin__mouth {
+  display: none;
+}
+.quentin--bursting .quentin__burst,
+.quentin--bursting .quentin__open-mouth {
+  display: block;
+}
+.quentin__wrapper {
+  -webkit-animation: bob 5s infinite linear;
+          animation: bob 5s infinite linear;
+}
+.stream {
+  height: 100vh;
+  width: 50px;
+  background: radial-gradient(calc(var(--radius) * 1px) calc(var(--radius) * 1px) at 50% calc(var(--top) * 1%), var(--bubble) 0, var(--bubble) 95%, transparent 95%);
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: calc(var(--delay) * -1s);
+          animation-delay: calc(var(--delay) * -1s);
+}
+.streams {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+  justify-content: space-around;
+  z-index: 2;
+}
+.streams .stream {
+  -webkit-animation-name: float;
+          animation-name: float;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+.streams--bursting .stream {
+  -webkit-animation-name: stream;
+          animation-name: stream;
+  -webkit-animation-duration: calc(var(--duration) * 1s);
+          animation-duration: calc(var(--duration) * 1s);
+}
+@-webkit-keyframes stream {
+  to {
+    background-position: 0 100vh;
+  }
+}
+@keyframes stream {
+  to {
+    background-position: 0 100vh;
+  }
+}
+@-webkit-keyframes bob {
+  0, 100% {
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  50% {
+    -webkit-transform: translate(0, -10%);
+            transform: translate(0, -10%);
+  }
+}
+@keyframes bob {
+  0, 100% {
+    -webkit-transform: translate(0, 10%);
+            transform: translate(0, 10%);
+  }
+  50% {
+    -webkit-transform: translate(0, -10%);
+            transform: translate(0, -10%);
+  }
+}
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(calc(var(--travel) * -1px), calc(var(--travel) * -1px));
+            transform: translate(calc(var(--travel) * -1px), calc(var(--travel) * -1px));
+  }
+  50% {
+    -webkit-transform: translate(calc(var(--travel) * 1px), 0);
+            transform: translate(calc(var(--travel) * 1px), 0);
+  }
+  75% {
+    -webkit-transform: translate(calc(var(--travel) * 1px), calc(var(--travel) * 1px));
+            transform: translate(calc(var(--travel) * 1px), calc(var(--travel) * 1px));
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+@keyframes float {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(calc(var(--travel) * -1px), calc(var(--travel) * -1px));
+            transform: translate(calc(var(--travel) * -1px), calc(var(--travel) * -1px));
+  }
+  50% {
+    -webkit-transform: translate(calc(var(--travel) * 1px), 0);
+            transform: translate(calc(var(--travel) * 1px), 0);
+  }
+  75% {
+    -webkit-transform: translate(calc(var(--travel) * 1px), calc(var(--travel) * 1px));
+            transform: translate(calc(var(--travel) * 1px), calc(var(--travel) * 1px));
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}

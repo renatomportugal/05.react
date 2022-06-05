@@ -31,3 +31,7 @@ npx react-codemod update-react-imports
 | [003.scroll-snap-spacer](https://github.com/renatomportugal/05.react/tree/main/003.scroll-snap-spacer/) |<img src="images/003.scroll-snap-spacer.jpg"/> |
 | [004.daftPunk](https://github.com/renatomportugal/05.react/tree/main/004.daftPunk/) |<img src="images/004.daftPunk.jpg"/> |
 | [005.modelo](https://github.com/renatomportugal/05.react/tree/main/005.modelo/) |<img src="images/005.modelo.jpg"/> |
+
+
+|Links        |Telas        |
+| [006.cdn.lil-octo-hold-finger-down-to-burst](https://github.com/renatomportugal/05.react/tree/main/006.cdn.lil-octo-hold-finger-down-to-burst/) |<img src="images/006.cdn.lil-octo-hold-finger-down-to-burst.jpg"/> |
