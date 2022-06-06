@@ -1,0 +1,14 @@
+/* Skeleton Boilerplate! */
+/* available Google fonts: Source Code/Sans/Serif Pro */
+body {
+  font-family: Raleway;
+  font-size: 1.5rem;
+  background-color: #FFF;
+  color: #123;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  user-select: none;
+}
+
+.example {
+  background-color: #FF851B;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  height: 100px;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  width: 100px;
+  
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.example-row {
+  display: flex;
+  flex-shrink: 0;
+  
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+.example-rows {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}

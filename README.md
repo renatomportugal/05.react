@@ -29,6 +29,7 @@ npx react-codemod update-react-imports
 | [006.cdn.lil-octo-hold-finger-down-to-burst](https://github.com/renatomportugal/05.react/tree/main/006.cdn.lil-octo-hold-finger-down-to-burst/) |<img src="images/006.cdn.lil-octo-hold-finger-down-to-burst.jpg"/> |
 | [016.cdn.color-roulette-react](https://github.com/renatomportugal/05.react/tree/main/016.cdn.color-roulette-react/) |<img src="images/016.cdn.color-roulette-react.jpg"/> |
 | [021.cdn.react-anime-example](https://github.com/renatomportugal/05.react/tree/main/021.cdn.react-anime-example/) |<img src="images/021.cdn.react-anime-example.jpg"/> |
+| [028.cdn.react-tween](https://github.com/renatomportugal/05.react/tree/main/028.cdn.react-tween/) |<img src="images/028.cdn.react-tween.jpg"/> |
 |Categoria    |Path         |
 | [025.cdn.trying-out-react-motion](https://github.com/renatomportugal/05.react/tree/main/025.cdn.trying-out-react-motion/) |<img src="images/025.cdn.trying-out-react-motion.jpg"/> |
 
@@ -40,6 +41,8 @@ npx react-codemod update-react-imports
 | [005.modelo](https://github.com/renatomportugal/05.react/tree/main/005.modelo/) |<img src="images/005.modelo.jpg"/> |
 | [015.cdn.codepen_PwRggP](https://github.com/renatomportugal/05.react/tree/main/015.cdn.codepen_PwRggP/) |<img src="images/015.cdn.codepen_PwRggP.jpg"/> |
 | [022.cdn.react-basics-using-react-element-only](https://github.com/renatomportugal/05.react/tree/main/022.cdn.react-basics-using-react-element-only/) |<img src="images/022.cdn.react-basics-using-react-element-only.jpg"/> |
+| [029.cdn.react-template](https://github.com/renatomportugal/05.react/tree/main/029.cdn.react-template/) |<img src="images/029.cdn.react-template.jpg"/> |
+| [030.cdn.react-stateless-component-hello-world-example](https://github.com/renatomportugal/05.react/tree/main/030.cdn.react-stateless-component-hello-world-example/) |<img src="images/030.cdn.react-stateless-component-hello-world-example.jpg"/> |
 
 
 ## Catalogo
@@ -75,12 +78,14 @@ npx react-codemod update-react-imports
 |Links        |Telas        |
 |---          |---          |
 | [001.React_Flexbox](https://github.com/renatomportugal/05.react/tree/main/001.React_Flexbox) |<img src="images/001.React_Flexbox.jpg"/> |
+| [026.cdn.react-w-skeleton-template](https://github.com/renatomportugal/05.react/tree/main/026.cdn.react-w-skeleton-template) |<img src="images/026.cdn.react-w-skeleton-template.jpg"/> |
 
 ## Formularios
 
 |Links        |Telas        |
 |---          |---          |
 | [017.cdn.contact-form](https://github.com/renatomportugal/05.react/tree/main/017.cdn.contact-form/) |<img src="images/017.cdn.contact-form.jpg"/> |
+| [032.cdn.react-signup-form-example](https://github.com/renatomportugal/05.react/tree/main/032.cdn.react-signup-form-example/) |<img src="images/032.cdn.react-signup-form-example.jpg"/> |
 
 ## Gráficos
 
@@ -90,6 +95,7 @@ npx react-codemod update-react-imports
 | [013.cdn.svg-path-builder](https://github.com/renatomportugal/05.react/tree/main/013.cdn.svg-path-builder) |<img src="images/013.cdn.svg-path-builder.jpg"/> |
 | [023.cdn.react-canvas-pie-chart](https://github.com/renatomportugal/05.react/tree/main/023.cdn.react-canvas-pie-chart) |<img src="images/023.cdn.react-canvas-pie-chart.jpg"/> |
 | [024.cdn.react-d3-graph](https://github.com/renatomportugal/05.react/tree/main/024.cdn.react-d3-graph) |<img src="images/024.cdn.react-d3-graph.jpg"/> |
+| [027.cdn.react-vis-simple-chart](https://github.com/renatomportugal/05.react/tree/main/027.cdn.react-vis-simple-chart) |<img src="images/027.cdn.react-vis-simple-chart.jpg"/> |
 
 ## IHM_Interface_Homem_Maquina
 
@@ -110,6 +116,12 @@ npx react-codemod update-react-imports
 | [019.cdn.rendering-react-from-json](https://github.com/renatomportugal/05.react/tree/main/019.cdn.rendering-react-from-json) |<img src="images/019.cdn.rendering-react-from-json.jpg"/> |
 | [020.cdn.load-external-data-in-react](https://github.com/renatomportugal/05.react/tree/main/020.cdn.load-external-data-in-react) |<img src="images/020.cdn.load-external-data-in-react.jpg"/> |
 
+## Modal
+
+|Links        |Telas        |
+|---          |---          |
+| [033.cdn.react-modal-animation](https://github.com/renatomportugal/05.react/tree/main/033.cdn.react-modal-animation/) |<img src="images/033.cdn.react-modal-animation.jpg"/> |
+
 ## Mouse
 
 |Links        |Telas        |
@@ -128,3 +140,8 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [008.cdn.slider](https://github.com/renatomportugal/05.react/tree/main/008.cdn.slider) |<img src="images/008.cdn.slider.jpg"/> |
 
+## Slides
+
+|Links        |Telas        |
+|---          |---          |
+| [031.cdn.react-slideshow](https://github.com/renatomportugal/05.react/tree/main/031.cdn.react-slideshow) |<img src="images/031.cdn.react-slideshow.jpg"/> |

@@ -1,0 +1,17 @@
+function Welcome(props) {
+  return <h1>HELLO, {props.name}</h1>;
+}
+
+const element = <Welcome name="WORLD" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+/* another option is to put the element directly in your ReactDOM render statment.
+
+ReactDOM.render(
+  <Welcome name="WORLD" />,
+  document.getElementById('root')
+);
+*/
