@@ -102,6 +102,10 @@ npx react-codemod update-react-imports
 |Links        |Telas        |
 |---          |---          |
 | [002.flight-instruments](https://github.com/renatomportugal/05.react/tree/main/002.flight-instruments/) |<img src="images/002.flight-instruments.jpg"/> |
+|Controle     |Botões       |
+| [034.cdn.reactjs-switch-button](https://github.com/renatomportugal/05.react/tree/main/034.cdn.reactjs-switch-button/) |<img src="images/034.cdn.reactjs-switch-button.jpg"/> |
+|Controle     |Painel       |
+| [035.cdn.react-js-fx-tickers](https://github.com/renatomportugal/05.react/tree/main/035.cdn.react-js-fx-tickers/) |<img src="images/035.cdn.react-js-fx-tickers.jpg"/> |
 
 ## Jogos
 

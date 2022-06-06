@@ -1,0 +1,156 @@
+class Toolbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { inputValue: '' };
+  }
+
+  handleInputChange = (event) => {
+    this.setState({ inputValue: event.target.value });
+  };
+  
+  handleSubmit = () => {
+    this.props.addTicker(this.state.inputValue);
+    this.clearInput();
+  };
+
+  clearInput() {
+    this.setState({ inputValue: '' });
+  }
+  
+  addRandomTickers = () => {
+    const randomTickers = [];
+    for (let i = 0; i < 100; ++i) {
+      randomTickers.push(makeDummyCurrencyPair());
+    }
+    this.props.addTicker(randomTickers);
+  };
+  
+  render() {
+    return (
+      <div className='toolbar'>
+          <label>Add currency pair: </label>
+          <input className='toolbar__input' type='text' value={this.state.inputValue} onChange={this.handleInputChange}/>
+          <button className='toolbar__button' onClick={this.handleSubmit}>Add</button>
+          <button className='toolbar__button' onClick={this.addRandomTickers}>Add 100 random pairs</button>
+      </div>
+    );
+  }
+}
+
+class Tile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { price: 50, prevPrice: 50, fluctuation: 0 };
+  }
+  
+  componentDidMount() {
+    this.tickPrice();
+  }
+  
+  tickPrice() {
+    setTimeout(() => {
+      const randomTick = (this.state.price/100) * Math.random();
+      const fluctuation =  (Math.random() > 0.5) ? randomTick : -1 * randomTick; //-1% to 1% fluctuation
+      const newPrice = this.state.price + fluctuation;
+      
+      this.setState({ price: newPrice, prevPrice: this.state.price, fluctuation });
+      this.tickPrice();
+    }, Math.random() * 1000 + 500); //tick every 500 - 1500 ms
+  }
+  
+  getFluctuationClassName() {
+    if (this.state.fluctuation < 0) {
+      return 'tile__fluctuation tile__fluctuation--down';
+    }
+    return 'tile__fluctuation';
+  }
+  
+  render() {
+    const buyPrice = this.state.price + 0.12;
+    const sellPrice = this.state.price - 0.12;
+    const absoluteFluctuation = Math.abs(this.state.fluctuation);
+    
+    return (
+      <div className='tile'>
+        <h1 className='tile__currency-pair-label'>{this.props.currencyPair}</h1>
+        <div className={this.getFluctuationClassName()}>{absoluteFluctuation.toFixed(2)}</div>
+      
+        <div className='tile__box tile__box--buy'>
+          <h2 className='tile__direction-label'>BUY</h2>
+          <span className='tile__price-P1'>{buyPrice.toString().substring(0,5)}</span>
+          <span className='tile__price-P2'>{buyPrice.toString().substring(5,7)}</span>
+          <span className='tile__price-P3'>{buyPrice.toFixed(5).substring(7,8)}</span>
+        </div>    
+        
+        <div className='tile__box tile__box--sell'>
+          <h2 className='tile__direction-label'>SELL</h2>
+          <span className='tile__price-P1'>{sellPrice.toString().substring(0,5)}</span>
+          <span className='tile__price-P2'>{sellPrice.toString().substring(5,7)}</span>
+          <span className='tile__price-P3'>{sellPrice.toFixed(5).substring(7,8)}</span>            
+        </div>
+      </div>
+    );
+  }
+}
+
+class TickerList extends React.Component {
+  render() {
+    return (
+      <div className='ticker-list'>
+        {
+          this.props.data.map(ticker => {
+            return (<Tile currencyPair={ticker} ></Tile> ); 
+          })
+        }
+      </div>
+    );
+  }
+}
+  
+class TickerApp extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = { currencyPairs: ['USD / JPY', 'GBP / JPY', 'EUR / JPY', 'AUD / USD'] };
+  }
+  
+  handleAddTicker = (ticker) => {
+    if (ticker) {
+      const newCurrencyPairs = this.state.currencyPairs.concat(ticker);
+      this.setState({ currencyPairs: newCurrencyPairs });
+    }
+  };
+  
+  render() {
+    return (
+      <div className='container'>
+        <h1>React FX Tickers</h1>
+        <Toolbar addTicker={this.handleAddTicker}/>
+        <TickerList data={this.state.currencyPairs} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <TickerApp />,
+  document.getElementById('app')
+);
+
+function makeDummyCurrencyPair() {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const alphabetLength = alphabet.length;
+  let text = '';
+
+  for (let i = 0; i < 3; ++i) {
+    text += alphabet.charAt(Math.floor(Math.random() * alphabetLength));
+  }
+
+  text += ' / ';
+
+  for (let i = 0; i < 3; ++i) {
+    text += alphabet.charAt(Math.floor(Math.random() * alphabetLength));
+  }
+
+  return text;
+}
