@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  background: #111;
+  overflow: hidden;
+}
+body:after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(90deg, #666 10%, #c0c0c0);
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 120px);
+          transform: translate(-50%, 120px);
+  border-radius: 0 0 100% 100%;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.tesla-coil__head {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  background: radial-gradient(circle at 60% 40%, #c0c0c0 50%, #000), #c0c0c0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) translate3d(0, 0, 100px);
+          transform: translate(-50%, -50%) translate3d(0, 0, 100px);
+  z-index: 3;
+  -webkit-perspective: 350px;
+          perspective: 350px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.tesla-coil__head--active {
+  box-shadow: 0 0 15px 4px #a537fd;
+}
+.tesla-coil__body {
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  background: linear-gradient(90deg, #666 10%, #c0c0c0);
+  -webkit-transform: translate(-50%, 0) rotateX(-30deg);
+          transform: translate(-50%, 0) rotateX(-30deg);
+  position: absolute;
+  -webkit-perspective: 350px;
+          perspective: 350px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.tesla-coil__ring {
+  content: '';
+  height: calc(var(--size) * 1px);
+  width: calc(var(--size) * 1px);
+  border-radius: 100%;
+  border: 15px solid #555;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0) rotateX(90deg);
+          transform: translate(-50%, 0) rotateX(90deg);
+}
+.tesla-coil__ring:nth-of-type(1) {
+  --size: 60;
+  top: 10%;
+}
+.tesla-coil__ring:nth-of-type(2) {
+  --size: 70;
+  top: 20%;
+}
+.tesla-coil__ring:nth-of-type(3) {
+  --size: 80;
+  top: 30%;
+}
+.tesla-coil__base {
+  height: 60px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 60px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateY(35deg);
+          transform: translate(-50%, -50%) rotateY(35deg);
+}
+.tesla-coil__base div {
+  background-color: #c0c0c0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.tesla-coil__base div:nth-of-type(1) {
+  background: #333;
+  -webkit-transform: rotateY(270deg) translateX(-50%);
+          transform: rotateY(270deg) translateX(-50%);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+.tesla-coil__base div:nth-of-type(2) {
+  -webkit-transform: rotateX(90deg) translateY(-50%);
+          transform: rotateX(90deg) translateY(-50%);
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+.tesla-coil__base div:nth-of-type(3) {
+  background: #666;
+  -webkit-transform: translateZ(30px);
+          transform: translateZ(30px);
+}

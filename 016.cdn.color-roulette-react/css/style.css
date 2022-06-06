@@ -1,0 +1,78 @@
+html, body {
+  height: 100%;
+  color: white;
+}
+
+body {
+  display: flex;
+  background: #333333;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica Neue;
+}
+
+h1 {
+  font-size: 2em;
+  color: #eeeeee;
+  display: inline-block;
+}
+
+a {
+  color: white;
+}
+
+p {
+  margin-top: 1em;
+  text-align: center;
+  color: #aaaaaa;
+}
+
+.circle-container {
+  margin: 5em auto 0;
+  border: solid 5px tomato;
+}
+
+.circle-container div {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.form {
+  height: 200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 60%;
+}
+
+.cssAnimation {
+  -webkit-animation: cssAnimation 0.6216s 20 ease;
+          animation: cssAnimation 0.6216s 20 ease;
+}
+
+@-webkit-keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(0deg) scale(0.1) skew(1deg) translate(0px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1.5) skew(1deg) translate(0px);
+  }
+}
+
+@keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(0deg) scale(0.1) skew(1deg) translate(0px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1.5) skew(1deg) translate(0px);
+  }
+}
+.field {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.field {
+  transition: all .10s ease-in-out;
+}

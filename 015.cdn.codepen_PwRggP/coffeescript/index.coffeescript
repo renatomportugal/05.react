@@ -1,0 +1,29 @@
+R = React.DOM
+N = null
+
+# global state manager
+render = null
+state = clicks: 0
+count = ->
+  state.clicks++
+  render()
+
+Hello = React.createClass
+  shouldComponentUpdate: (props) ->
+    props.clicks isnt @props.clicks
+  componentDidMount: ->
+    console.log "new element"
+  count: ->
+    count()
+  render: ->
+    R.div N, "Hello #{@props.name}",
+      R.p N, "How are you?"
+      R.button onClick: @count, "Click me"
+      R.p N, """
+        Clicked #{@props.clicks} time#{if @props.clicks != 1 then "s" else ""}.
+      """
+
+render = ->
+  React.renderComponent Hello(name:"World", clicks:state.clicks), document.body
+
+render()
