@@ -29,6 +29,8 @@ npx react-codemod update-react-imports
 | [006.cdn.lil-octo-hold-finger-down-to-burst](https://github.com/renatomportugal/05.react/tree/main/006.cdn.lil-octo-hold-finger-down-to-burst/) |<img src="images/006.cdn.lil-octo-hold-finger-down-to-burst.jpg"/> |
 | [016.cdn.color-roulette-react](https://github.com/renatomportugal/05.react/tree/main/016.cdn.color-roulette-react/) |<img src="images/016.cdn.color-roulette-react.jpg"/> |
 | [021.cdn.react-anime-example](https://github.com/renatomportugal/05.react/tree/main/021.cdn.react-anime-example/) |<img src="images/021.cdn.react-anime-example.jpg"/> |
+|Categoria    |Path         |
+| [025.cdn.trying-out-react-motion](https://github.com/renatomportugal/05.react/tree/main/025.cdn.trying-out-react-motion/) |<img src="images/025.cdn.trying-out-react-motion.jpg"/> |
 
 ## Basics
 
