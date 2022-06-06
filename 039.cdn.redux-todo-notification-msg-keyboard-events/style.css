@@ -1,0 +1,168 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Dank Mono', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.logo img {
+	height: 70px;
+}
+
+body {
+	background-color: rgb(100, 205, 237);
+	padding: 20px 10px;
+}
+
+input,
+button {
+	border: none;
+	padding: .5rem 1rem;
+	font-size: 23px;
+	border-radius: 50px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input:focus,
+button:focus {
+	outline: none;
+}
+
+
+input {
+	width: 90%;
+	box-shadow: 3px 2px 47px -2px white;
+}
+
+input::-webkit-input-placeholder {
+	color: rgb(190, 184, 184);
+	font-size: 18px;
+	text-transform: none;
+	font-family: 'Dank Mono', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button {
+	position: absolute;
+	right: 15%;
+	border-radius: 0;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+	border-left: 1px solid #ebebeb;
+	text-transform: uppercase;
+	font-family: 'Dank Mono', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.item {
+	padding: 5px;
+	margin: 5px;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form {
+	width: 80%;
+	text-align: center;
+	margin: 1rem 0;
+	display: flex;
+	align-items: center;
+}
+
+
+.delete-todo {
+	position: static;
+}
+
+.item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 8px 12px 52px 1px violet;
+	border-radius: 100px;
+	margin: 2rem 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.item>button {
+	background-color: black;
+	color: white;
+	border: 1px solid rgba(238, 130, 238, 0.438);
+	border-left: none;
+	box-shadow: 8px 12px 52px 1px white;
+	padding: 4px 1rem;
+	right: 33%;
+}
+
+
+.item span {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+	padding: .3rem 1rem;
+	border-radius: 100px;
+	background-color: #ebebeb;
+}
+
+#container {
+	width: 40%;
+}
+
+@media only screen and (max-width:943px) {
+	.form {
+		width: 90%;
+	}
+
+	button {
+		right: 7%;
+	}
+
+	#container {
+		width: 70%;
+	}
+
+	.item>button {
+		right: 20%;
+	}
+
+}
+
+.info {
+	transition: top .6s ease;
+	top: -9rem;
+}
+
+.tip {
+	color: #ffd400;
+	top: -2rem;
+	position: relative;
+	z-index: -1;
+	transition: top .6s ease;
+
+}
+
+.show {
+	top: .5rem;
+}
+
+.red {
+	color: red;
+}
+
+.warning-text {
+	text-align: center;
+}
+
+.instructions {
+	font-size: .8rem;
+	color: gainsboro;
+	/* list-style: none; */
+	text-align: center;
+	text-transform: capitalize;
+}
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
+}

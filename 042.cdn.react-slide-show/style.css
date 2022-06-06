@@ -1,0 +1,294 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+hr {
+  margin-top: 55px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+@keyframes animate-in-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes animate-out-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes animate-in-to-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes animate-out-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.enter-to-left {
+  animation: animate-in-to-left 600ms;
+}
+
+.exit-to-left {
+  animation: animate-out-to-left 600ms;
+}
+.exit-to-left .carousel-caption {
+  opacity: 0;
+}
+
+.enter-to-right {
+  animation: animate-in-to-right 600ms;
+}
+
+.exit-to-right {
+  animation: animate-out-to-right 600ms;
+}
+.exit-to-right .carousel-caption {
+  opacity: 0;
+}
+
+.carousel-slider-wrapper {
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-slider-wrapper * {
+  box-sizing: border-box;
+}
+.carousel-slider-wrapper .carousel-slide {
+  background-color: #fff;
+  margin: 0 auto;
+  display: none;
+  min-width: 100%;
+  text-align: center;
+}
+.carousel-slider-wrapper .carousel-slide.swipe {
+  user-select: none;
+  pointer-events: none;
+}
+.carousel-slider-wrapper .carousel-slide.active-slide {
+  display: block;
+  background-color: #f3f3f3;
+}
+.carousel-slider-wrapper .carousel-slide.active-slide.next-active-slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel-slider-wrapper .carousel-slide.active-slide img {
+  width: 100%;
+  display: block;
+}
+.carousel-slider-wrapper .carousel-slide.active-slide .carousel-caption {
+  position: absolute;
+  right: 35px;
+  bottom: 20px;
+  left: 35px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+.carousel-slider-wrapper .carousel-slide.active-slide .carousel-caption .carousel-caption-title,
+.carousel-slider-wrapper .carousel-slide.active-slide .carousel-caption .carousel-caption-subtitle {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.carousel-slider-wrapper .carousel-slide.active-slide .carousel-caption .carousel-caption-title {
+  margin: 0 0 5px;
+}
+.carousel-slider-wrapper .carousel-slide.active-slide .carousel-caption .carousel-caption-subtitle {
+  margin: 0;
+}
+.carousel-slider-wrapper .carousel-control {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 65px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  z-index: 1;
+}
+.carousel-slider-wrapper .carousel-control .left-triangle {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-left: 35px solid #fff;
+  border-bottom: 30px solid transparent;
+  position: absolute;
+  left: -1px;
+  cursor: initial;
+  transform: translateY(-50%);
+}
+.carousel-slider-wrapper .carousel-control .right-triangle {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-right: 35px solid #fff;
+  border-bottom: 30px solid transparent;
+  position: absolute;
+  right: -1px;
+  cursor: initial;
+  transform: translateY(-50%);
+}
+.carousel-slider-wrapper .carousel-control.carousel-left-arrow button {
+  position: absolute;
+  left: -1px;
+  transform: translateY(-50%);
+}
+.carousel-slider-wrapper .carousel-control.carousel-right-arrow {
+  right: 0;
+  left: auto;
+}
+.carousel-slider-wrapper .carousel-control.carousel-right-arrow button {
+  position: absolute;
+  right: -1px;
+  transform: translateY(-50%);
+}
+.carousel-slider-wrapper .carousel-control button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  height: 30px;
+}
+.carousel-slider-wrapper .carousel-control button.padding-left-15 {
+  padding-left: 15px;
+}
+.carousel-slider-wrapper .carousel-control button.padding-right-15 {
+  padding-right: 15px;
+}
+.carousel-slider-wrapper .carousel-control button svg {
+  width: 15px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.carousel-slider-wrapper .carousel-control button svg:hover {
+  opacity: 0.9;
+}
+.carousel-slider-wrapper .carousel-control button i {
+  opacity: 0.5;
+  cursor: pointer;
+  color: #000;
+  font-size: 28px;
+}
+.carousel-slider-wrapper .carousel-control button i:hover {
+  opacity: 1;
+}
+.carousel-slider-wrapper .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  z-index: 15;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.carousel-slider-wrapper .carousel-indicators.position-left {
+  left: 35px;
+}
+.carousel-slider-wrapper .carousel-indicators.position-right {
+  right: 35px;
+}
+.carousel-slider-wrapper .carousel-indicators.position-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel-slider-wrapper .carousel-indicators li {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+.carousel-slider-wrapper .carousel-indicators li:hover {
+  background-color: #fff;
+}
+.carousel-slider-wrapper .carousel-indicators li.active {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  background-color: #fff;
+  cursor: initial;
+}
+
+@media (min-width: 768px) {
+  .carousel-slider-wrapper .carousel-slide.active-slide .carousel-caption {
+    padding-bottom: 30px;
+    left: 65px;
+    right: 65px;
+  }
+  .carousel-slider-wrapper .carousel-slide.exit-to-left .carousel-caption, .carousel-slider-wrapper .carousel-slide.exit-to-right .carousel-caption {
+    opacity: 1;
+  }
+  .carousel-slider-wrapper .carousel-control .left-triangle {
+    border-top: 50px solid transparent;
+    border-left: 65px solid #fff;
+    border-bottom: 50px solid transparent;
+  }
+  .carousel-slider-wrapper .carousel-control .right-triangle {
+    border-top: 50px solid transparent;
+    border-right: 65px solid #fff;
+    border-bottom: 50px solid transparent;
+  }
+  .carousel-slider-wrapper .carousel-control button {
+    height: 50px;
+  }
+  .carousel-slider-wrapper .carousel-control button svg {
+    width: 25px;
+  }
+  .carousel-slider-wrapper .carousel-control button i {
+    font-size: 50px;
+  }
+  .carousel-slider-wrapper .carousel-indicators.position-left {
+    left: 65px;
+  }
+  .carousel-slider-wrapper .carousel-indicators.position-right {
+    right: 65px;
+  }
+  .carousel-slider-wrapper .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+  }
+  .carousel-slider-wrapper .carousel-indicators li.active {
+    width: 12px;
+    height: 12px;
+  }
+}

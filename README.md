@@ -44,12 +44,23 @@ npx react-codemod update-react-imports
 | [029.cdn.react-template](https://github.com/renatomportugal/05.react/tree/main/029.cdn.react-template/) |<img src="images/029.cdn.react-template.jpg"/> |
 | [030.cdn.react-stateless-component-hello-world-example](https://github.com/renatomportugal/05.react/tree/main/030.cdn.react-stateless-component-hello-world-example/) |<img src="images/030.cdn.react-stateless-component-hello-world-example.jpg"/> |
 
-
 ## Catalogo
 
 |Links        |Telas        |
 |---          |---          |
 | [003.scroll-snap-spacer](https://github.com/renatomportugal/05.react/tree/main/003.scroll-snap-spacer/) |<img src="images/003.scroll-snap-spacer.jpg"/> |
+
+## Contador
+
+|Links        |Telas        |
+|---          |---          |
+| [044.cdn.react-contator-automatico](https://github.com/renatomportugal/05.react/tree/main/044.cdn.react-contator-automatico/) |<img src="images/044.cdn.react-contator-automatico.jpg"/> |
+
+## Date
+
+|Links        |Telas        |
+|---          |---          |
+| [041.cdn.react-abstractionjsx](https://github.com/renatomportugal/05.react/tree/main/041.cdn.react-abstractionjsx/) |<img src="images/041.cdn.react-abstractionjsx.jpg"/> |
 
 ## DragDrop
 
@@ -86,6 +97,7 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [017.cdn.contact-form](https://github.com/renatomportugal/05.react/tree/main/017.cdn.contact-form/) |<img src="images/017.cdn.contact-form.jpg"/> |
 | [032.cdn.react-signup-form-example](https://github.com/renatomportugal/05.react/tree/main/032.cdn.react-signup-form-example/) |<img src="images/032.cdn.react-signup-form-example.jpg"/> |
+| [043.cdn.react-form-with-constraints-basic-example](https://github.com/renatomportugal/05.react/tree/main/043.cdn.react-form-with-constraints-basic-example/) |<img src="images/043.cdn.react-form-with-constraints-basic-example.jpg"/> |
 
 ## Gráficos
 
@@ -106,6 +118,21 @@ npx react-codemod update-react-imports
 | [034.cdn.reactjs-switch-button](https://github.com/renatomportugal/05.react/tree/main/034.cdn.reactjs-switch-button/) |<img src="images/034.cdn.reactjs-switch-button.jpg"/> |
 |Controle     |Painel       |
 | [035.cdn.react-js-fx-tickers](https://github.com/renatomportugal/05.react/tree/main/035.cdn.react-js-fx-tickers/) |<img src="images/035.cdn.react-js-fx-tickers.jpg"/> |
+|Controle     |Slider       |
+|---          |---          |
+| [008.cdn.slider](https://github.com/renatomportugal/05.react/tree/main/008.cdn.slider) |<img src="images/008.cdn.slider.jpg"/> |
+
+## Imagens
+
+|Links        |Telas        |
+|---          |---          |
+| [040.cdn.recursive-tree-react-js](https://github.com/renatomportugal/05.react/tree/main/040.cdn.recursive-tree-react-js/) |<img src="images/040.cdn.recursive-tree-react-js.jpg"/> |
+
+## I-O
+
+|Links        |Abrir Arquivo |
+|---          |---           |
+| [045.cdn.open-file-select-dialogue-using-react-js](https://github.com/renatomportugal/05.react/tree/main/045.cdn.open-file-select-dialogue-using-react-js/) |<img src="images/045.cdn.open-file-select-dialogue-using-react-js.jpg"/> |
 
 ## Jogos
 
@@ -138,17 +165,12 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [004.daftPunk](https://github.com/renatomportugal/05.react/tree/main/004.daftPunk/) |<img src="images/004.daftPunk.jpg"/> |
 
-## Slider
-
-|Links        |Telas        |
-|---          |---          |
-| [008.cdn.slider](https://github.com/renatomportugal/05.react/tree/main/008.cdn.slider) |<img src="images/008.cdn.slider.jpg"/> |
-
 ## Slides
 
 |Links        |Telas        |
 |---          |---          |
 | [031.cdn.react-slideshow](https://github.com/renatomportugal/05.react/tree/main/031.cdn.react-slideshow) |<img src="images/031.cdn.react-slideshow.jpg"/> |
+| [042.cdn.react-slide-show](https://github.com/renatomportugal/05.react/tree/main/042.cdn.react-slide-show) |<img src="images/042.cdn.react-slide-show.jpg"/> |
 
 ## Testes
 
@@ -157,3 +179,9 @@ npx react-codemod update-react-imports
 | [036.cdn.react-exercise-1](https://github.com/renatomportugal/05.react/tree/main/036.cdn.react-exercise-1) |<img src="images/036.cdn.react-exercise-1.jpg"/> |
 | [037.cdn.react-exercise-2](https://github.com/renatomportugal/05.react/tree/main/037.cdn.react-exercise-2) |<img src="images/037.cdn.react-exercise-2.jpg"/> |
 | [038.cdn.react-exercises-3](https://github.com/renatomportugal/05.react/tree/main/038.cdn.react-exercises-3) |<img src="images/038.cdn.react-exercises-3.jpg"/> |
+
+## ToDo
+
+|Links        |Telas        |
+|---          |---          |
+| [039.cdn.redux-todo-notification-msg-keyboard-events](https://github.com/renatomportugal/05.react/tree/main/039.cdn.redux-todo-notification-msg-keyboard-events) |<img src="images/039.cdn.redux-todo-notification-msg-keyboard-events.jpg"/> |

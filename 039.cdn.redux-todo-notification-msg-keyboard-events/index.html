@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Redux todo + notification msg + keyboard events </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+		<div class="main">
+			<div class="logo">
+				<img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" alt="" />
+			</div>
+
+			<form class="form" id="task-form">
+				<input id="todo" type="text" placeholder="enter a new todo ..." />
+				<button id="submit-todo" type="submit">submit</button>
+			</form>
+
+			<small class="tip">You have 10 characters left</small>
+			<dialog class="info" open>
+				<div class="warning-text"></div>
+			</dialog>
+
+
+			<div id="container"></div>
+      			<ol class="instructions">
+				<li>try submitting an empty value</li>
+				<li>try submittting a todo with more than 20 characters</li>
+				<li>try removing a todo</li>
+				<li>confirm removing a todo with a keypress</li>
+			</ol>
+		</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.4/redux.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>

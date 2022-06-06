@@ -1,0 +1,14 @@
+.canvas-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  background: #38a29b2b;
+}
+
+canvas{
+  border: 6px solid #eaeaea4f;
+  background: #38a29bba;
+  border-radius: 50%;
+  box-shadow: 7px 2px 12px #80808085;
+}
