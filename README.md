@@ -87,7 +87,8 @@ npx react-codemod update-react-imports
 
 |Links        |Telas        |
 |---          |---          |
-| [011.cdn.battle-demo-the-danger-crew-rpg](https://github.com/renatomportugal/05.react/tree/main/011.cdn.battle-demo-the-danger-crew-rpg) |<img src="images/011.cdn.battle-demo-the-danger-crew-rpg.jpg"/> |
+| [012.cdn.real-time-line-chart](https://github.com/renatomportugal/05.react/tree/main/012.cdn.real-time-line-chart) |<img src="images/012.cdn.real-time-line-chart.jpg"/> |
+| [013.cdn.svg-path-builder](https://github.com/renatomportugal/05.react/tree/main/013.cdn.svg-path-builder) |<img src="images/013.cdn.svg-path-builder.jpg"/> |
 
 ## IHM_Interface_Homem_Maquina
 |Links        |Telas        |
