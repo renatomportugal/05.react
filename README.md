@@ -149,3 +149,11 @@ npx react-codemod update-react-imports
 |Links        |Telas        |
 |---          |---          |
 | [031.cdn.react-slideshow](https://github.com/renatomportugal/05.react/tree/main/031.cdn.react-slideshow) |<img src="images/031.cdn.react-slideshow.jpg"/> |
+
+## Testes
+
+|Links        |Telas        |
+|---          |---          |
+| [036.cdn.react-exercise-1](https://github.com/renatomportugal/05.react/tree/main/036.cdn.react-exercise-1) |<img src="images/036.cdn.react-exercise-1.jpg"/> |
+| [037.cdn.react-exercise-2](https://github.com/renatomportugal/05.react/tree/main/037.cdn.react-exercise-2) |<img src="images/037.cdn.react-exercise-2.jpg"/> |
+| [038.cdn.react-exercises-3](https://github.com/renatomportugal/05.react/tree/main/038.cdn.react-exercises-3) |<img src="images/038.cdn.react-exercises-3.jpg"/> |

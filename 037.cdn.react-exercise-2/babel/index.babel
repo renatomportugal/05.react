@@ -1,0 +1,88 @@
+// Write a component that uses the TEAMS object
+// to write markup that looks like
+// <div>
+//   <div>
+//     <h1>TEAM NAME</h1>
+//     <ul>
+//       <li>PLAYER 1</li>
+//       <li>PLAYER 2</li>
+//       <li>PLAYER 3</li>
+//     </ul>
+//   </div>
+//   <div>
+//     <h2>TEAM 2</h2>
+//     ... etc
+//   </div>
+//   ... etc
+// </div>
+// Make the sure the color of _JUST_ the h1 is
+// is the team's color
+//
+// The team (and the encircling div) should be
+// its own component
+//
+// Call the list TeamList and the team component
+// Team
+
+const TEAMS = [
+  { name: "Utah Jazz", color: "#002B5C", players: ["Derrick Favors", "Rudy Gobert", "Gordon Hayward"] },
+  { name: "Golden State Warriors", color: "#006BB6", players: ["Stephen Curry", "Klay Thompson", "Draymond Green"] },
+  { name: "Oklahoma City Thunder", color: "#F05133", players: ["Kevin Durant", "Russell Westbrook", "Serge Ibaka"] },
+  { name: "Houston Rockets", color: "#CE1141", players: ["James Harden", "Dwight Howard", "Ty Lawson"] },
+  { name: "Clevland Cavaliers", color: "#860038", players: ["LeBron James", "Kyrie Irving", "Kevin Love"] }
+];
+
+// code goes here
+
+class TeamList extends React.Component {
+  render() {
+    return (
+      <div>
+       {this.props.teams.map( teamObj => <Team team={teamObj} /> )}
+      </div>
+    )
+  }
+}
+
+class Team extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1 style={ {color: this.props.team.color} }>{this.props.team.name}</h1>
+        <ul>
+          {this.props.team.players.map( 
+           playerObj => <Player player={playerObj} /> )}
+        </ul>
+      </div>
+    )
+  }
+}
+
+class Player extends React.Component {
+  render() {
+    return <li>{this.props.player}</li>
+  }
+}
+
+ReactDOM.render(
+  <TeamList teams={TEAMS} />,
+  document.getElementById('target')
+);
+
+// unit tests
+// do not modify the below code
+describe('teams list', () => {
+  it('should have a TeamList', () => {
+    expect(TeamList).toBeDefined();
+    
+    // should render out five teams
+    expect(document.getElementById('target').children[0].children.length).toBe(5);
+  });
+  
+  it('should have a Team', () => {
+    expect(Team).toBeDefined();
+    
+    // grab first UL, see if it has three players
+    expect(document.querySelector('ul').children.length).toBe(3);
+  });
+});

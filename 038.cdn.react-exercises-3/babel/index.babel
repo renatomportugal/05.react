@@ -1,0 +1,100 @@
+// make an app that has a text input, a checkbox,
+// and an h1; the h1's text should be whatever is
+// in the text input and its color should be red
+// when the checkbox is check and should be black
+// when unchecked
+//
+// render to the target id div
+//
+// reference https://facebook.github.io/react/docs/forms.html
+//
+// if the unit tests are messing with your inputs while you're
+// coding them, you can change the 'describe' method to be called
+// 'xdescribe' and it will stop running the tests so you can code
+// in peace
+
+class App extends React.Component {  
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      text: "change me!",
+      beRed: false
+    }
+  }
+  
+  handleChecked(e) {
+    this.setState({beRed: !this.state.beRed});
+  }
+  handleText(e) {
+    this.setState({text: e.target.value});
+  }
+  
+  
+  render() {
+    return (
+      <div>
+      <input type="checkbox" checked={this.state.beRed}
+        onChange={this.handleChecked.bind(this)} />
+      <input type="text" value={this.state.text} 
+        onChange={this.handleText.bind(this)} />
+      <h1 style={ {color: this.state.beRed ? 'red' : 'black'} }>{this.state.text}</h1>
+      </div>
+    )
+  }
+}
+
+class TextBox extends React.Component {
+  handleChange(e) {
+    this.props.changeCB(e.target.value);
+  }
+  render() {
+    return <input type="text" value={this.props.textVal} />
+  }
+}
+
+// unit tests
+// do not modify the below code
+const tree = ReactDOM.render(<App/>, document.getElementById('target'));
+describe('app', function() {
+  
+  const findInput = (type) => (component) => component.tagName === 'INPUT' && component.type === type;
+
+  it('should handle text events', () => {
+    const TEST_STRING = 'test string please ignore'
+    const inputs = React.addons.TestUtils.findAllInRenderedTree(tree, findInput('text'));
+    const h1 = React.addons.TestUtils.findRenderedDOMComponentWithTag(tree, 'h1');
+    
+    expect(inputs.length).toBe(1);
+    
+    const textInput = inputs[0];
+    textInput.value = TEST_STRING;
+    React.addons.TestUtils.Simulate.change(textInput);
+    
+    expect(textInput.value).toBe(TEST_STRING);
+    expect(h1.innerHTML).toBe(TEST_STRING);
+  });
+  
+  it('should handle text checkboxes', () => {
+    const TEST_STRING_2 = 'ES6 + REACT';
+    const RED_COLOR = 'rgb(255, 0, 0)'; // getComputedStyle reports in rgb
+    const textInputs = React.addons.TestUtils.findAllInRenderedTree(tree, findInput('text'));
+    const checkboxes = React.addons.TestUtils.findAllInRenderedTree(tree, findInput('checkbox'));
+    const h1 = React.addons.TestUtils.findRenderedDOMComponentWithTag(tree, 'h1');
+
+    expect(textInputs.length).toBe(1);
+    expect(checkboxes.length).toBe(1);
+    
+    const textInput = textInputs[0];
+    const checkbox = checkboxes[0];
+    
+    textInput.value = TEST_STRING_2;
+    React.addons.TestUtils.Simulate.change(textInput);
+    expect(textInput.value).toBe(TEST_STRING_2);
+    
+    React.addons.TestUtils.Simulate.change(checkbox);
+    expect(checkbox.checked).toBe(true);
+    expect(window.getComputedStyle(h1).color).toBe(RED_COLOR);
+  });
+  
+});
