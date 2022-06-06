@@ -1,0 +1,21 @@
+const myStyle = {
+  color: "blue"
+};
+
+/** 
+// React Element using plain Js
+const myReactElement = React.createElement(
+  "h1",
+  { style: myStyle, className: "myClassName" },
+  "Hello World!"
+);
+*/
+
+// React Element using Jsx
+const myReactElement = (
+  <h1 style={myStyle} className="myClassName">
+    Hello World!
+  </h1>
+);
+
+ReactDOM.render(myReactElement, document.getElementById("app"));

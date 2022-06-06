@@ -1,0 +1,19 @@
+const Anime = ReactAnime.default;
+
+let App =() => (
+      <Anime easing="easeOutElastic"
+           loop={true}
+           duration={1000}
+           direction="alternate"
+           delay={(el, index) => index * 240}
+           translateX='13rem'
+           scale={[.75, .9]}>
+        <div className="blue"/>
+        <div className="green"/>
+        <div className="red"/>
+      </Anime>
+    );
+
+let node = document.getElementById('app');
+
+ReactDOM.render(<App/>, node);
