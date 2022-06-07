@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Animating with React.js!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+:root {
+  --color-border: #EAECED;
+  --border-radius: .5rem;
+}
+
+body, html, #app {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #E8EAEF;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #383C4A;
+}
+
+.searchbar {
+  z-index: 100;
+  font-size: 5vmin;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  margin-bottom: 20vh;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  padding: .75em;
+  background-color: #F7F9FB;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+.search:focus-within {
+  box-shadow: 0 0 3px #92A4DE;
+}
+.search > svg {
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  stroke: #9297A8;
+}
+
+.search-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: transparent;
+  /* Because we're using focus-within above. Probably needs @supports */
+}
+.search-input:focus {
+  outline: none;
+}
+
+.results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 50vh;
+  width: 100%;
+  z-index: -1;
+  font-size: 0.6em;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  margin: 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+.results:before {
+  content: '';
+  position: absolute;
+  top: calc(var(--border-radius) * -1);
+  left: 0;
+  width: 100%;
+  background-color: #F7F9FB;
+  height: calc( (var(--height,0) * 1px) + var(--border-radius) );
+  transition: height .5s;
+  border-radius: inherit;
+}
+
+.result-item {
+  margin: 0.25rem .5em;
+  padding: .5em .6em;
+  list-style-type: none;
+  border-radius: .5rem;
+  -webkit-animation: pop-in .3s backwards;
+          animation: pop-in .3s backwards;
+  -webkit-animation-delay: calc( var(--i) * 0.08s );
+          animation-delay: calc( var(--i) * 0.08s );
+  background-color: transparent;
+  transition: all .1s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  color: #333;
+}
+.result-item:before {
+  content: 'dog';
+  text-transform: uppercase;
+  font-size: .5rem;
+  font-weight: bold;
+  background: #6D7386;
+  color: white;
+  border-radius: .25em;
+  margin-right: .5rem;
+  display: inline-block;
+  padding: 0.25em;
+}
+.result-item:hover {
+  background-color: #EDEFF2;
+}
+@-webkit-keyframes pop-in {
+  from {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0;
+  }
+}
+@keyframes pop-in {
+  from {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0;
+  }
+}
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app"></div>
+
+<script>
+
+  const dogBreeds = [
+    "affenpinscher",
+    "african",
+    "airedale",
+    "akita",
+    "appenzeller",
+    "basenji",
+    "beagle",
+    "bluetick",
+    "borzoi",
+    "bouvier",
+    "boxer",
+    "brabancon",
+    "briard",
+    "buhund-norwegian",
+    "bulldog-boston",
+    "bulldog-english",
+    "bulldog-french",
+    "bullterrier-staffordshire",
+    "cairn",
+    "cattledog-australian",
+    "chihuahua",
+    "chow",
+    "clumber",
+    "cockapoo",
+    "collie-border",
+    "coonhound",
+    "corgi-cardigan",
+    "cotondetulear",
+    "dachshund",
+    "dalmatian",
+    "dane-great",
+    "deerhound-scottish",
+    "dhole",
+    "dingo",
+    "doberman",
+    "elkhound-norwegian",
+    "entlebucher",
+    "eskimo",
+    "frise-bichon",
+    "germanshepherd",
+    "greyhound-italian",
+    "groenendael",
+    "hound-afghan",
+    "hound-basset",
+    "hound-blood",
+    "hound-english",
+    "hound-ibizan",
+    "hound-walker",
+    "husky",
+    "keeshond",
+    "kelpie",
+    "komondor",
+    "kuvasz",
+    "labrador",
+    "leonberg",
+    "lhasa",
+    "malamute",
+    "malinois",
+    "maltese",
+    "mastiff-bull",
+    "mastiff-english",
+    "mastiff-tibetan",
+    "mexicanhairless",
+    "mix",
+    "mountain-bernese",
+    "mountain-swiss",
+    "newfoundland",
+    "otterhound",
+    "papillon",
+    "pekinese",
+    "pembroke",
+    "pinscher-miniature",
+    "pitbull",
+    "pointer-german",
+    "pointer-germanlonghair",
+    "pomeranian",
+    "poodle-miniature",
+    "poodle-standard",
+    "poodle-toy",
+    "pug",
+    "puggle",
+    "pyrenees",
+    "redbone",
+    "retriever-chesapeake",
+    "retriever-curly",
+    "retriever-flatcoated",
+    "retriever-golden",
+    "ridgeback-rhodesian",
+    "rottweiler",
+    "saluki",
+    "samoyed",
+    "schipperke",
+    "schnauzer-giant",
+    "schnauzer-miniature",
+    "setter-english",
+    "setter-gordon",
+    "setter-irish",
+    "sheepdog-english",
+    "sheepdog-shetland",
+    "shiba",
+    "shihtzu",
+    "spaniel-blenheim",
+    "spaniel-brittany",
+    "spaniel-cocker",
+    "spaniel-irish",
+    "spaniel-japanese",
+    "spaniel-sussex",
+    "spaniel-welsh",
+    "springer-english",
+    "stbernard",
+    "terrier-american",
+    "terrier-australian",
+    "terrier-bedlington",
+    "terrier-border",
+    "terrier-dandie",
+    "terrier-fox",
+    "terrier-irish",
+    "terrier-kerryblue",
+    "terrier-lakeland",
+    "terrier-norfolk",
+    "terrier-norwich",
+    "terrier-patterdale",
+    "terrier-russell",
+    "terrier-scottish",
+    "terrier-sealyham",
+    "terrier-silky",
+    "terrier-tibetan",
+    "terrier-toy",
+    "terrier-westhighland",
+    "terrier-wheaten",
+    "terrier-yorkshire",
+    "vizsla",
+    "waterdog-spanish",
+    "weimaraner",
+    "whippet",
+    "wolfhound-irish"
+  ];
+</script>
+
+<a href="https://youtu.be/D0fzZtj05Ag" target="_blank" data-keyframers-credit style="color: #000"></a>
+<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.10.2/umd/react.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.10.2/umd/react-dom.production.min.js'></script>
+<script>
+console.clear();
+
+const { useState, useRef, useLayoutEffect, useEffect } = React;
+
+function SearchInput({ query, onChange }) {
+  return (
+    React.createElement("label", { className: "search" },
+    React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "48",
+      height: "48",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#000000",
+      "stroke-width": "3",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round" },
+
+    React.createElement("circle", { cx: "11", cy: "11", r: "8" }),
+    React.createElement("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" })),
+
+
+    React.createElement("input", {
+      className: "search-input",
+      placeholder: "Search for dog breeds",
+      type: "search",
+      defaultValue: query,
+      onChange: event => {
+        onChange(event.target.value);
+      } })));
+
+
+
+}
+
+function Result({ children, style }) {
+  const elRef = useRef(null);
+  const topRef = useRef(0);
+
+  // TODO: Get dy working
+  const [top, setTop] = useState(null);
+  const [dy, setDy] = useState(0);
+
+  //   useEffect(() => {
+  //     if (!elRef.current) return;
+
+  //     const nextTop = elRef.current.getBoundingClientRect().top;
+
+  //     if (nextTop === topRef.current) return;
+
+  //     const deltaY = nextTop - topRef.current;
+
+  //     topRef.current = nextTop;
+
+  //     setDy(deltaY);
+
+  //     requestAnimationFrame(() => {
+  //       setDy(0);
+  //     });
+  //   });
+
+  return (
+    React.createElement("li", {
+      style: {
+        ...style,
+        '--dy': dy },
+
+      className: "result-item",
+      ref: elRef },
+    children));
+
+
+}
+
+function Results({ data = [] }) {
+  const elRef = useRef(null);
+
+  const [height, setHeight] = useState(null);
+  useLayoutEffect(() => {
+    if (!elRef.current) return;
+    const rect = elRef.current.getBoundingClientRect();
+    setHeight(rect.height);
+  });
+
+  return (
+    React.createElement("ul", {
+      className: "results",
+      ref: elRef,
+      style: { "--height": height },
+      "data-height": height },
+
+    data.map((item, i) => {
+      return (
+        React.createElement(Result, {
+          key: item,
+          style: {
+            "--i": i } },
+
+
+        item));
+
+
+    })));
+
+
+}
+
+function App() {
+  const [query, setQuery] = useState("dog");
+  const results =
+  query.length < 2 ?
+  [] :
+  dogBreeds.
+  filter(dogBreed => {
+    return dogBreed.includes(query);
+  }).
+  slice(0, 5);
+
+  return (
+    React.createElement("div", { className: "searchbar" },
+    React.createElement(SearchInput, { onChange: setQuery, query: query }),
+    React.createElement(Results, { data: results })));
+
+
+}
+
+ReactDOM.render(React.createElement(App, null), document.querySelector("#app"));
+</script>
+
+</body>
+</html>

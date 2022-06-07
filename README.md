@@ -121,12 +121,19 @@ npx react-codemod update-react-imports
 |Controle     |Slider       |
 |---          |---          |
 | [008.cdn.slider](https://github.com/renatomportugal/05.react/tree/main/008.cdn.slider) |<img src="images/008.cdn.slider.jpg"/> |
+|Controle     |Buscar       |
+|---          |---          |
+| [048.cdn.Search](https://github.com/renatomportugal/05.react/tree/main/048.cdn.Search) |<img src="images/048.cdn.Search.jpg"/> |
 
 ## Imagens
 
-|Links        |Telas        |
+|Categoria    |Geral        |
 |---          |---          |
 | [040.cdn.recursive-tree-react-js](https://github.com/renatomportugal/05.react/tree/main/040.cdn.recursive-tree-react-js/) |<img src="images/040.cdn.recursive-tree-react-js.jpg"/> |
+|Categoria    |Editor       |
+| [046.cdn.react-image-editing-filter](https://github.com/renatomportugal/05.react/tree/main/046.cdn.react-image-editing-filter/) |<img src="images/046.cdn.react-image-editing-filter.jpg"/> |
+|Categoria    |Crop         |
+| [047.cdn.react-select-and-crop-image](https://github.com/renatomportugal/05.react/tree/main/047.cdn.react-select-and-crop-image/) |<img src="images/047.cdn.react-select-and-crop-image.jpg"/> |
 
 ## I-O
 

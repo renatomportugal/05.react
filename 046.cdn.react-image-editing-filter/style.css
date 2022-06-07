@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+:root {
+  --first-color: rgba(0, 0, 10, 0.6);
+  --second-color: rgb(31, 30, 38);
+  --third-color: #B0BEC5;
+  --fourth-color: #878787;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--second-color);
+  color: var(--fourth-color);
+  /*
+  background-color: #deeaef;
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-image: -webkit-linear-gradient(white 2px, transparent 2px),
+    -webkit-linear-gradient(0, white 2px, transparent 2px),
+    -webkit-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    -webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+  background-image: -moz-linear-gradient(white 2px, transparent 2px),
+    -moz-linear-gradient(0, white 2px, transparent 2px),
+    -moz-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    -moz-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+  background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+  */
+}
+
+.App {
+
+}
+
+.HeadBar {
+  color: grey;
+  background: var(--first-color);
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.HeadBar__title {
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.Headbar__input__text {
+  width: 600px;
+  background: var(--second-color);
+  border: 0;
+  border-radius: 2px;
+  padding: 6px 10px;
+  color: var(--third-color);
+}
+
+.MainView {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs {
+  font-size: 14px;
+  width: 290px;
+  min-width: 280px;
+  padding: 20px;
+  background: var(--first-color);
+  color: white;
+}
+
+.inputs form {
+  margin: 30px 0;
+}
+
+input {
+  margin: 5px;
+  color: #006064;
+}
+
+input[type=range] {
+  outline: none;
+  background: red;
+  color: red;
+}
+
+input[type=range]:hover {
+  cursor: pointer;
+}
+
+input[type=number] {
+  font-size: 1.4rem;
+  width: 80px;
+  margin: 0 10px;
+  border: 0;
+  border-bottom: 1px solid grey;
+  text-align: right;
+  background: 0;
+  color: #B0BEC5;
+}
+
+
+button {
+  border: none;
+  background: #878787;
+  color: white;
+  padding: 5px;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  object-fit: contain;
+  object-position: top;
+  margin: 10px;
+}
+
+.annotation {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 80%;
+}
+
+.FilterBar {
+  width: 200px;
+  background: var(--first-color);
+  padding: 0 10px;
+}
+
+.TestFilter {
+  height: 120px;
+  width: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
