@@ -56,6 +56,12 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [044.cdn.react-contator-automatico](https://github.com/renatomportugal/05.react/tree/main/044.cdn.react-contator-automatico/) |<img src="images/044.cdn.react-contator-automatico.jpg"/> |
 
+## CSS
+
+|Figuras      |Telas        |
+|---          |---          |
+| [049.cdn.react-carousel](https://github.com/renatomportugal/05.react/tree/main/049.cdn.react-carousel/) |<img src="images/049.cdn.react-carousel.jpg"/> |
+
 ## Date
 
 |Links        |Telas        |

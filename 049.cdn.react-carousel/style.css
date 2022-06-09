@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes next-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes next-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes back-slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes back-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::before, *::after {
+  content: "";
+}
+
+html {
+  font-size: 10px;
+}
+
+#app {
+  background: linear-gradient(to top left, #e66465, purple);
+  font-family: "Playfair Display", serif;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 50px 70px 50px;
+  flex-direction: column;
+  max-width: 650px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 650px) {
+  .wrapper {
+    padding: 30px 30px 50px 30px;
+  }
+}
+
+.intro {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 50px;
+}
+.intro h1 {
+  font-size: 5rem;
+  font-weight: lighter;
+}
+.intro h1,
+.intro h2 {
+  font-style: italic;
+}
+.intro h2 {
+  margin-bottom: 20px;
+}
+.intro span {
+  text-decoration: underline;
+  color: #ff7a2a;
+}
+@media only screen and (max-width: 550px) {
+  .intro h1 {
+    font-size: 4rem;
+  }
+  .intro h2 {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .intro p {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .intro h1 {
+    font-size: 3rem;
+  }
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  margin-bottom: 50px;
+  box-shadow: 0px 15px 30px 0px #151515;
+  border-style: solid;
+  border-width: 3px;
+  transition-duration: 0.5s;
+  transition-property: border-color;
+}
+.carousel .controls {
+  position: absolute;
+  z-index: 12121996;
+  height: 30px;
+  width: 30px;
+  background-color: purple;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+.carousel .controls--back {
+  left: 25px;
+}
+.carousel .controls--back span {
+  position: relative;
+  border-left: 5px solid pink;
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid pink;
+  border-bottom-left-radius: 1px;
+  transform: translate3d(-3px, -1px, 0) rotateZ(30deg);
+}
+.carousel .controls--back span::before {
+  position: absolute;
+  border-top: 4px solid pink;
+  width: 12px;
+  border-top-right-radius: 10px;
+  height: 15px;
+  transform: rotateZ(-45deg) translate3d(8px, -3px, 0);
+}
+.carousel .controls--next {
+  right: 25px;
+}
+.carousel .controls--next span {
+  position: relative;
+  border-left: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-right: 5px solid pink;
+  border-bottom: 5px solid pink;
+  border-bottom-right-radius: 1px;
+  transform: translate3d(4px, -1px, 0) rotateZ(-34deg);
+}
+.carousel .controls--next span::before {
+  position: absolute;
+  border-top: 4px solid pink;
+  width: 12px;
+  border-top-left-radius: 10px;
+  height: 15px;
+  transform: rotateZ(45deg) translate3d(-17px, 5px, 0);
+}
+.carousel .controls:hover {
+  height: 33px;
+  width: 33px;
+}
+.carousel .slide {
+  position: absolute;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  z-index: 0;
+}
+.carousel .slide__copy-message {
+  position: absolute;
+  top: 10px;
+  font-size: 1.2rem;
+  transition-duration: 0.5s;
+}
+.carousel .slide__copy-message.nope {
+  top: 0;
+  transform: translate3d(0, -100%, 0);
+}
+.carousel .slide__shape {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  cursor: crosshair;
+  position: relative;
+}
+.carousel .slide__shape--heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+}
+.carousel .slide__shape--heart::before, .carousel .slide__shape--heart::after {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.carousel .slide__shape--heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.carousel .slide__shape--pacman {
+  width: 0px;
+  height: 0px;
+  border-right: 60px solid transparent;
+  border-top: 60px solid orange;
+  border-left: 60px solid orange;
+  border-bottom: 60px solid orange;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+.carousel .slide__shape--yin-yang {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #eee;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+}
+.carousel .slide__shape--yin-yang::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #eee;
+  border: 18px solid black;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+.carousel .slide__shape--yin-yang::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: black;
+  border: 18px solid #eee;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+.carousel .slide__shape--cut-diamond {
+  border-style: solid;
+  border-color: transparent transparent DodgerBlue transparent;
+  border-width: 0 25px 25px 25px;
+  height: 0;
+  width: 50px;
+  box-sizing: content-box;
+  position: relative;
+  margin-bottom: 50px;
+}
+.carousel .slide__shape--cut-diamond:after {
+  position: absolute;
+  top: 25px;
+  left: -25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: DodgerBlue transparent transparent transparent;
+  border-width: 70px 50px 0 50px;
+}
+.carousel .slide__shape--infinity {
+  position: relative;
+  width: 150px;
+  height: 80px;
+  box-sizing: content-box;
+}
+.carousel .slide__shape--infinity::before, .carousel .slide__shape--infinity::after {
+  content: "";
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 15px solid green;
+  border-radius: 40px 40px 0 40px;
+  transform: rotate(-45deg);
+}
+.carousel .slide__shape--infinity::after {
+  left: auto;
+  right: 0;
+  border-radius: 40px 40px 40px 0;
+  transform: rotate(45deg);
+}
+.carousel--heart {
+  border-color: red;
+}
+.carousel--pacman {
+  border-color: orange;
+}
+.carousel--yin-yang {
+  border-color: black;
+}
+.carousel--cut-diamond {
+  border-color: DodgerBlue;
+}
+.carousel--infinity {
+  border-color: green;
+}
+@media only screen and (max-width: 450px) {
+  .carousel {
+    height: 300px;
+  }
+}
+
+.code-wrapper {
+  border-width: 3px;
+  border-style: solid;
+  background-color: pink;
+  box-shadow: 0px 15px 30px 0px #151515;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  transition-property: border-color;
+  transition-duration: 0.5s;
+}
+.code-wrapper .code {
+  font-family: monospace;
+  font-size: 1.2rem;
+  white-space: pre-wrap;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  padding: 60px;
+  width: 100%;
+}
+.code-wrapper .code--last {
+  position: absolute;
+}
+.code-wrapper .code--last.slide-left {
+  animation-name: back-slide-out;
+}
+.code-wrapper .code--last.slide-right {
+  animation-name: next-slide-out;
+}
+.code-wrapper .code--active {
+  position: relative;
+}
+.code-wrapper .code--active.slide-left {
+  animation-name: back-slide-in;
+}
+.code-wrapper .code--active.slide-right {
+  animation-name: next-slide-in;
+}
+@media only screen and (max-width: 550px) {
+  .code-wrapper .code {
+    padding: 45px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .code-wrapper .code {
+    padding: 30px;
+  }
+}
+.code-wrapper--heart {
+  border-color: red;
+}
+.code-wrapper--pacman {
+  border-color: orange;
+}
+.code-wrapper--yin-yang {
+  border-color: black;
+}
+.code-wrapper--cut-diamond {
+  border-color: DodgerBlue;
+}
+.code-wrapper--infinity {
+  border-color: green;
+}
