@@ -178,6 +178,12 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [004.daftPunk](https://github.com/renatomportugal/05.react/tree/main/004.daftPunk/) |<img src="images/004.daftPunk.jpg"/> |
 
+## Pessoas
+
+|Lista        |Telas        |
+|---          |---          |
+| [050.cdn.profile-list](https://github.com/renatomportugal/05.react/tree/main/050.cdn.profile-list/) |<img src="images/050.cdn.profile-list.jpg"/> |
+
 ## Slides
 
 |Links        |Telas        |
