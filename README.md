@@ -172,6 +172,12 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [018.cdn.hexagon-tiles-2-1-0](https://github.com/renatomportugal/05.react/tree/main/018.cdn.hexagon-tiles-2-1-0/) |<img src="images/018.cdn.hexagon-tiles-2-1-0.jpg"/> |
 
+## Musica
+
+|Links        |Telas        |
+|---          |---          |
+| [051.sonorous](https://github.com/renatomportugal/05.react/tree/main/051.sonorous/) |<img src="images/051.sonorous.jpg"/> |
+
 ## Neon
 
 |Links        |Telas        |
