@@ -131,7 +131,7 @@ npx react-codemod update-react-imports
 |---          |---          |
 | [048.cdn.Search](https://github.com/renatomportugal/05.react/tree/main/048.cdn.Search) |<img src="images/048.cdn.Search.jpg"/> |
 
-## Imagens
+## Imagem
 
 |Categoria    |Geral        |
 |---          |---          |
@@ -140,6 +140,8 @@ npx react-codemod update-react-imports
 | [046.cdn.react-image-editing-filter](https://github.com/renatomportugal/05.react/tree/main/046.cdn.react-image-editing-filter/) |<img src="images/046.cdn.react-image-editing-filter.jpg"/> |
 |Categoria    |Crop         |
 | [047.cdn.react-select-and-crop-image](https://github.com/renatomportugal/05.react/tree/main/047.cdn.react-select-and-crop-image/) |<img src="images/047.cdn.react-select-and-crop-image.jpg"/> |
+|Categoria    |Mapeamento   |
+| [052.cdn.react-select-and-crop-image](https://github.com/renatomportugal/05.react/tree/main/052.cdn.react-select-and-crop-image/) |<img src="images/052.cdn.react-select-and-crop-image.jpg"/> |
 
 ## I-O
 
