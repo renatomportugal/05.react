@@ -162,6 +162,12 @@ npx react-codemod update-react-imports
 | [019.cdn.rendering-react-from-json](https://github.com/renatomportugal/05.react/tree/main/019.cdn.rendering-react-from-json) |<img src="images/019.cdn.rendering-react-from-json.jpg"/> |
 | [020.cdn.load-external-data-in-react](https://github.com/renatomportugal/05.react/tree/main/020.cdn.load-external-data-in-react) |<img src="images/020.cdn.load-external-data-in-react.jpg"/> |
 
+## Links
+
+|Links        |Telas        |
+|---          |---          |
+| [053.cdn.ReactPageRouterLink](https://github.com/renatomportugal/05.react/tree/main/053.cdn.ReactPageRouterLink/) |<img src="images/053.cdn.ReactPageRouterLink.jpg"/> |
+
 ## Modal
 
 |Links        |Telas        |
