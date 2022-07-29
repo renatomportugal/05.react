@@ -22,6 +22,23 @@ npx react-codemod update-react-imports
 
 ```
 
+### npm_audit
+
+```CMD
+npm audit
+69 vulnerabilities (12 low, 28 moderate, 26 high, 3 critical)
+
+npm audit fix
+65 vulnerabilities (12 low, 28 moderate, 22 high, 3 critical)
+
+npm audit fix --force
+6 high severity vulnerabilities
+
+npm update
+
+npm audit report
+```
+
 ## Animação
 
 |Links        |Telas        |
